@@ -18,9 +18,14 @@ export class DropboxSession {
 	async upload(filePath) {
 		const fileName = path.basename(filePath)
 		const outPath = `${this.outDirectory}/${fileName}`
-		return this.dbx.filesUpload({
-			outPath,
-			contents: fs.readFileSync(filePath),
-		})
+		try {
+			process.stdout.write(`Uploading to dropbox: ${filePath} => ${outPath}\n`)
+			await this.dbx.filesUpload({
+				path: outPath,
+				contents: fs.readFileSync(filePath),
+			})
+		} catch (e) {
+			process.stdout.write(`${e.toString()}\n`)
+		}
 	}
 }
