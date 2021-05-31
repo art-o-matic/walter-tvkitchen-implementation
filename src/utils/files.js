@@ -15,5 +15,5 @@ export function isEmptyFile(path) {
 export function generateSegmentFileName(segmentPayload) {
 	const segmentStartTime = dayjs(segmentPayload.origin).add(segmentPayload.position)
 	const segmentData = JSON.parse(segmentPayload.data.toString('utf8'))
-	return `${segmentData.title}_${segmentStartTime.format('YY-MM-DD-HH-mm-ss')}.txt`
+	return `${segmentData.title}_caption_${segmentStartTime.format('YY-MM-DD-HH-mm-ss')}.txt`
 }
