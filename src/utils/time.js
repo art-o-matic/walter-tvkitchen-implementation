@@ -1,5 +1,6 @@
 import dayjs from 'dayjs'
 import en from 'dayjs/locale/en'
+import { removeLastCharacter } from './string'
 
 export function getLatestMondayMidnight() {
 	const origin = dayjs()
@@ -30,4 +31,11 @@ export function getDayOffsetByCode(dayCode) {
 		default:
 			return 0
 	}
+}
+
+export function formatWalterDate(dayJsDate) {
+	const formattedDate = dayJsDate
+		.toDate()
+		.toISOString()
+	return removeLastCharacter(formattedDate) // walter spec doesn't include the `Z`
 }

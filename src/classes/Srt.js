@@ -2,6 +2,9 @@ import fs from 'fs'
 import {
 	isEmptyFile,
 } from '../utils/files'
+import {
+	srtPayloadToCaptionLines,
+} from '../utils/payloads'
 
 export class Srt {
 	constructor({
@@ -18,8 +21,11 @@ export class Srt {
 	}
 
 	appendPayload(payload) {
-		fs.writeSync(this.file, payload.data)
-		fs.writeSync(this.file, '\n')
+		const lines = srtPayloadToCaptionLines(payload)
+		lines.forEach((line) => {
+			fs.writeSync(this.file, line)
+			fs.writeSync(this.file, '\n')
+		})
 	}
 
 	getPath() {
