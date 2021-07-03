@@ -1260,6 +1260,18 @@
     command-exists "^1.2.9"
     mpegts-demuxer "0.1.0"
 
+"@tvkitchen/appliance-core@0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@tvkitchen/appliance-core/-/appliance-core-0.8.0.tgz#0ee413adc5c0824c4bf545ae5f5f61e44b23888d"
+  integrity sha512-7wUs84J6zy8Ch5ojpa7KSWxMM5qgd7eEKMqGI4Q6QA9v0MQqULp6ogeWL+u6tnR5nNttCunIbWAsFEDozXGN4w==
+  dependencies:
+    "@tvkitchen/base-classes" "^2.0.0-alpha.1"
+    "@tvkitchen/base-constants" "^1.2.0"
+    "@tvkitchen/base-errors" "^1.0.1"
+    "@tvkitchen/base-interfaces" "4.0.0-alpha.4"
+    command-exists "^1.2.9"
+    mpegts-demuxer "0.1.0"
+
 "@tvkitchen/appliance-video-caption-extractor@0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@tvkitchen/appliance-video-caption-extractor/-/appliance-video-caption-extractor-0.5.0.tgz#11bb8d1bc3d2c99b074d18b77af9e6bdcaad7be2"
@@ -1270,12 +1282,12 @@
     "@tvkitchen/base-constants" "^1.0.1"
     command-exists "^1.2.9"
 
-"@tvkitchen/appliance-video-http-ingestion@0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@tvkitchen/appliance-video-http-ingestion/-/appliance-video-http-ingestion-0.3.2.tgz#5579d66f9afc7dc27ae26bc94f9292ad60cba8a9"
-  integrity sha512-xa4pKD5S6cJPHZdvFFo35wkir5pGAYPExMTsMicjKS1rfbiz+brV+sDxZN4qqwrrHCOJ9nVG4X4jLklErdQDlQ==
+"@tvkitchen/appliance-video-http-receiver@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@tvkitchen/appliance-video-http-receiver/-/appliance-video-http-receiver-0.4.0.tgz#1db458b6bd1945c8fa31630c9595e726c2a8a542"
+  integrity sha512-9y4RaWVWI1FhSNjoNLldAC52nqC8vxiddQ8xT0v0RFeu5BxjWYAJ0fygE8D1d5mThGP4f1qa7ttw/+HUxwI4Tw==
   dependencies:
-    "@tvkitchen/appliance-core" "0.7.0"
+    "@tvkitchen/appliance-core" "0.8.0"
     node-fetch "^2.6.1"
 
 "@tvkitchen/appliance-video-segment-generator@0.2.0":
