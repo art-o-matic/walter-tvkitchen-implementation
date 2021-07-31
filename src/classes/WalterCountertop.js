@@ -1,5 +1,5 @@
 import { Countertop } from '@tvkitchen/countertop'
-import { VideoHttpIngestionAppliance } from '@tvkitchen/appliance-video-http-ingestion'
+import { VideoHttpReceiverAppliance } from '@tvkitchen/appliance-video-http-receiver'
 import { VideoCaptionExtractorAppliance } from '@tvkitchen/appliance-video-caption-extractor'
 import {
 	VideoSegmentGeneratorAppliance,
@@ -23,7 +23,7 @@ export class WalterCountertop extends Countertop {
 	init() {
 		const url = `${this.tunerDevice.url}/auto/v${this.station.channel}`
 		const origin = getLatestMondayMidnight()
-		this.addAppliance(VideoHttpIngestionAppliance, { url })
+		this.addAppliance(VideoHttpReceiverAppliance, { url })
 		this.addAppliance(VideoCaptionExtractorAppliance)
 		this.addAppliance(VideoSegmentGeneratorAppliance, {
 			interval: INTERVALS.WEEK,
