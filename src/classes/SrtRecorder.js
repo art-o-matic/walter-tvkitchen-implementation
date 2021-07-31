@@ -1,6 +1,9 @@
 import { SrtGenerator } from './SrtGenerator'
 import { generateSegmentFileName } from '../utils/files'
-import { payloadHasData } from '../utils/payloads'
+import {
+	payloadHasData,
+	srtPayloadContainsLowercaseCharacters,
+} from '../utils/payloads'
 
 export class SrtRecorder {
 	constructor({
@@ -24,6 +27,9 @@ export class SrtRecorder {
 
 	processSrtPayload(srtPayload) {
 		if (this.currentSrt !== null) {
+			if (srtPayloadContainsLowercaseCharacters(srtPayload)) {
+				return
+			}
 			this.currentSrt.appendPayload(srtPayload)
 		}
 	}
