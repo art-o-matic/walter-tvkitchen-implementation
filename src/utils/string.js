@@ -6,5 +6,5 @@ export function removeLastCharacter(str) {
 }
 
 export function containsLowercaseCharacters(str) {
-	return (/a-z/.test(str))
+	return (/[a-z]/.test(str))
 }
