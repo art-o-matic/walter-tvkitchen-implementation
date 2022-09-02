@@ -29,3 +29,19 @@ $> $EDITOR config/sources.json
 wait a few moments
 
 `yarn start`
+
+
+#Info from /home/dschultz/README.md
+#(on local machine in Austin)
+TVKitchen location: /var/bin/walter
+
+It is running in Supervisor (`supervisorctl`)
+
+Kafka is running directly.
+You can restart it by typing:
+
+sudo systemctl start kafka
+
+And check status by:
+
+sudo journalctl -u kafka
