@@ -31,8 +31,8 @@ wait a few moments
 `yarn start`
 
 
-#Info from /home/dschultz/README.md
-#(on local machine in Austin)
+# Info from /home/dschultz/README.md
+## (on local machine in Austin)
 TVKitchen location: /var/bin/walter
 
 It is running in Supervisor (`supervisorctl`)
