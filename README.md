@@ -23,26 +23,20 @@ $> cp config/sources.example.json config/sources.json
 $> $EDITOR config/sources.json
 ```
 
-## Running
-OLD:  `yarn start:kafka` [ DEPRECATED ] 
-OLD: wait a few moments  [ DEPRECATED ] 
-OLD: `yarn start`  [ DEPRECATED ] 
-
-
 # Info from /home/dschultz/README.md
 ## (on local machine in Austin)
 TVKitchen location: /var/bin/walter
 
 It is running in Supervisor (`supervisorctl`)
 
-Kafka is running directly.
-You can restart it by typing:
+Kafka is running directly. You can restart it by typing:
 
-sudo systemctl start kafka
+	sudo systemctl start kafka
 
 And check status by:
 
-sudo journalctl -u kafka
+	sudo journalctl -u kafka
+
 --------------------------------------------------
 # Ben's cheatsheet notes from July 21, 2023
 --------------------------------------------------
@@ -63,24 +57,27 @@ supervisorctl runs tvkitchen:
 	sudo supervisorctl tail -f tvkitchen
 
 To view log file: 
-sudo vi /var/log/supervisor/tvkitchen-stdout---supervisor-ujwsomvt.log
+
+	sudo vi /var/log/supervisor/tvkitchen-stdout---supervisor-ujwsomvt.log
 
 ----------------
 
 To restart machine: 
-When rbooting (sudo reboot), kafka and zookeeper will autostart, 
-but TVKitchen then needs to be RESTARTED:
-sudo supervisorctl restart tvkitchen
+
+When rbooting (sudo reboot), kafka and zookeeper will autostart, but TVKitchen then needs to be RESTARTED:
+
+	sudo supervisorctl restart tvkitchen
 
 ----------------
 
 temoprrary notes:
 
-Edited this file to add the -teletext option to the ccextractor call:
-/var/bin/walter/walter-tvkitchen-implementation/node_modules/@tvkitchen/appliance-video-caption-extractor/lib/VideoCaptionExtractorAppliance.js
+Edited a local config file so that we could test the -teletype option for ccextractor. This is a temporary change that will be overwritten the next time we update tvkitchen. 
 
-after this line:
-      '-customtxt', '1100100', // start time, end time, use relative timestamp
-added this line:
-      '-teletext',
+For the record, we edited this file:
+	/var/bin/walter/walter-tvkitchen-implementation/node_modules/@tvkitchen/appliance-video-caption-extractor/lib/VideoCaptionExtractorAppliance.js
+and after this line:
+    '-customtxt', '1100100', // start time, end time, use relative timestamp
+we added this line:
+    '-teletext',
 
