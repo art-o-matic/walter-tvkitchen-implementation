@@ -62,9 +62,9 @@ To view log file:
 
 ----------------
 
-To restart machine: 
+# To restart machine: 
 
-When rbooting (sudo reboot), kafka and zookeeper will autostart, but TVKitchen then needs to be RESTARTED:
+After restart (sudo reboot), kafka and zookeeper will autostart, but TVKitchen then needs to be RESTARTED:
 
 	sudo supervisorctl restart tvkitchen
 
@@ -75,9 +75,14 @@ temoprrary notes:
 Edited a local config file so that we could test the -teletype option for ccextractor. This is a temporary change that will be overwritten the next time we update tvkitchen. 
 
 For the record, we edited this file:
+
 	/var/bin/walter/walter-tvkitchen-implementation/node_modules/@tvkitchen/appliance-video-caption-extractor/lib/VideoCaptionExtractorAppliance.js
+
 and after this line:
-    '-customtxt', '1100100', // start time, end time, use relative timestamp
+    
+	'-customtxt', '1100100', // start time, end time, use relative timestamp
+ 
 we added this line:
+
     '-teletext',
 
