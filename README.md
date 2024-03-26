@@ -23,6 +23,19 @@ $> cp config/sources.example.json config/sources.json
 $> $EDITOR config/sources.json
 ```
 
+# EDIT THE PROGRAM SCHEDULE HERE (on local machine):
+/var/bin/walter/walter-tvkitchen-implementation/config/sources.json 
+(see below for sample schedule)
+
+# EDIT THE DROPBOX CONFIG HERE (on local machine):
+/var/bin/walter/walter-tvkitchen-implementation/config/dropbox.json 
+```
+{
+  "accessToken": "y05SBA6JfykA_______redacted________jf2BNYfFnn",
+  "transcriptsLocation": "/transcripts"
+}
+```
+
 # Info from /home/dschultz/README.md
 ## (on local machine in Austin)
 TVKitchen location: /var/bin/walter
@@ -86,3 +99,137 @@ we added this line:
 
     '-teletext',
 
+
+# SAMPLE SCHEDULE FILE (sources.json)
+```
+{
+  "tunerDevices": [
+    {
+      "url": "http://10.157.173.252:5004",
+      "tunerCount": 4
+    }
+  ],
+  "stations": [
+    {
+      "name": "ABC",
+      "channel": "24.1",
+      "programs": [
+        {
+          "startMs": 32400000,
+          "durationMs": 3600000,
+          "schedule": ["Su"],
+          "data": {
+            "title": "This_Week"
+          }
+        },
+        {
+          "startMs": 63000000,
+          "durationMs": 3600000,
+          "schedule": ["M","T","W","Th","F"],
+          "data": {
+            "title": "ABC_World_News_Tonight"
+          }
+        }
+      ]
+    },
+    {
+      "name": "NBC",
+      "channel": "36.1",
+      "programs": [
+        {
+          "startMs": 32400000,
+          "durationMs": 3600000,
+          "schedule": ["Su"],
+          "data": {
+            "title": "Meet_the_Press"
+          }
+        },
+        {
+          "startMs": 63000000,
+          "durationMs": 1800000,
+          "schedule": ["M","T","W","Th","F"],
+          "data": {
+            "title": "NBC_Nightly_News"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CBS",
+      "channel": "42.1",
+      "programs": [
+        {
+          "startMs": 34200000,
+          "durationMs": 1800000,
+          "schedule": ["Su"],
+          "data": {
+            "title": "Face_the_Nation"
+          }
+        },
+        {
+          "startMs": 63000000,
+          "durationMs": 1800000,
+          "schedule": ["S"],
+          "data": {
+            "title": "CBS_Weekend_News"
+          }
+        },
+        {
+          "startMs": 63000000,
+          "durationMs": 1800000,
+          "schedule": ["M","T","W","Th","F"],
+          "data": {
+            "title": "CBS_Evening_News"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PBS",
+      "channel": "18.1",
+      "programs": [
+        {
+          "startMs": 61200000,
+          "durationMs": 1800000,
+          "schedule": ["M","T","W","Th","F"],
+          "data": {
+            "title": "BBC_World_News_Outside_Source"
+          }
+        },
+        {
+          "startMs": 63000000,
+          "durationMs": 1800000,
+          "schedule": ["M","T","W","Th","F"],
+          "data": {
+            "title": "BBC_World_News_America"
+          }
+        },
+        {
+          "startMs": 64800000,
+          "durationMs": 3600000,
+          "schedule": ["M","T","W","Th","F"],
+          "data": {
+            "title": "PBS_NewsHour"
+          }
+        },
+        {
+          "startMs": 68400000,
+          "durationMs": 1800000,
+          "schedule": ["F"],
+          "data": {
+            "title": "Washington_Week"
+          }
+        },
+        {
+          "startMs": 70200000,
+          "durationMs": 1800000,
+          "schedule": ["S","Su"],
+          "data": {
+            "title": "PBS_News_Weekend"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
