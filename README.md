@@ -36,6 +36,13 @@ $> $EDITOR config/sources.json
 }
 ```
 
+# Configure kafka logging
+To prevent kafka from filling up the host's disk space with log files, edit this file:
+```
+/home/kafka/kafka/config/log4j.properties
+```
+so that it conforms to the example in this repo (in the kafka-config-sample/ directory)
+
 # Info from /home/dschultz/README.md
 ## (on local machine in Austin)
 TVKitchen location: /var/bin/walter
@@ -69,6 +76,10 @@ supervisorctl runs tvkitchen:
 	sudo supervisorctl status tvkitchen
 	sudo supervisorctl tail -f tvkitchen
 
+If TVKitchen then needs to be RESTARTED:
+
+	sudo supervisorctl restart tvkitchen
+
 To view log file: 
 
 	sudo vi /var/log/supervisor/tvkitchen-stdout---supervisor-ujwsomvt.log
@@ -77,9 +88,7 @@ To view log file:
 
 # To restart machine: 
 
-After restart (sudo reboot), kafka and zookeeper will autostart, but TVKitchen then needs to be RESTARTED:
-
-	sudo supervisorctl restart tvkitchen
+After restart (sudo reboot), kafka, zookeeper, and TVKitchen will autostart.
 
 ----------------
 
